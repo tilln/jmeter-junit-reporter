@@ -1,0 +1,12 @@
+<testsuite errors="1" failures="1" name="JMETER" skipped="1" tests="4">
+    <testcase classname="OK" name="good"/>
+    <testcase classname="FAIL" name="bad">
+        <failure message="oh no">wrong</failure>
+    </testcase>
+    <testcase classname="ERROR" name="very bad">
+        <error message="uh oh">whoops</error>
+    </testcase>
+    <testcase classname="SKIP" name="so what">
+        <skipped message="never mind"/>
+    </testcase>
+</testsuite>
