@@ -1,0 +1,12 @@
+language: java
+deploy:
+  provider: releases
+  api_key:
+    secure: Qwq59hGvUXzWDG4jaZck4CsxCC+vE/4Os5X2QedoGTmTBS4DCoLOuCl3rA+JewBhk8VP/vUYDk1OyzseILXX1nbolCj8wGS4qGvY1ak8M1tkaCTFEMTgWhpVbe/ysMhaUOBpGaYNVH8XFMjoH5Pu4caVinrn3/FZiKhXkXnABAwqCNr5kkgu1Ap3v3OrxaKutwyMH95ZflUc95zDEshgrAdQsxNeFbfQ6G1ICeP0ASVVELXpigd7i26CZfJtyBW52U1R9Z6UB+OKb3y4HnGjoTuuQ3XYVsKbDWXM1yEmiqk0DW37uCRWXq7+lqeeiwgQDCUf8J6Z6N5QqW7AXHhWaN/9Y5Nq3BqOsjWJAVaDS2SIppJIH4z9nL6p+jTCvREGIofydmyFoXh3aHWBtO1/HRbXoZA0SAxwXYL1M8YwjlNlSuE3Y9oBWkSUT5iKkpLYYWfHcozOzhmOghFQNy3iD/E7h30Oq2Pla2vAsVbM6S8wax4P6iyk4TXy5cZaROBgEykhg+DwwZZnp7VhyEmsHMcMltaHSQQaIY6Nkly2Do9KdrdwHoxSC1Jyax4d10YgRvNccEIBuKZsgU8HGwiEupFY1kE99LSzy9tvJcglBqJeiSglvuC4KGrTZvK/B9jPPUmp78vuINhVYH3hZBgAMdAI+BnQCfXY1CSNafdHPUg=
+  file: "target/jmeter-junit-reporter-*.jar"
+  file_glob: true
+  skip_cleanup: true
+  overwrite: true
+  on:
+    repo: tilln/jmeter-junit-reporter
+    tags: true
