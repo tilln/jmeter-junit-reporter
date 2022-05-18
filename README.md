@@ -24,7 +24,10 @@ The output format is compatible with Jenkins, as described [here](https://llg.cu
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite errors="0" failures="0" name="JUnit Reporter" skipped="0" tests="5">
-  <testcase classname="Maximum Login time less than 5000ms" name="MAX(Login) &lt; 5000"/>
+  <testcase classname="Maximum Login time less than 5000ms"
+            name="MAX(Login) &lt; 5000">
+    <failure message="">Actual value 6230.000000 exceeds threshold 5000.000000 for samples matching "Login"</failure>
+  </testcase>
   <testcase classname="90th Percentile less than 2000ms" name="P90(.*) &lt; 2000"/>
   <testcase classname="Average less than 1000ms" name="MEAN(.*) &lt; 1000"/>
   <testcase classname="At least 95% target throughput" name="HITS(.*) &gt;= 9500"/>
