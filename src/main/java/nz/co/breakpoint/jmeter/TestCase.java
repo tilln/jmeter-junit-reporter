@@ -75,9 +75,9 @@ public class TestCase {
         } else if (metricName.matches("(?i)min|minimum")) {
             tc.metric = Statistic.min();
         } else if (metricName.matches("(?i)hits|samples")) {
-            tc.metric = Statistic.count();
+            tc.metric = CountStatistic.instance();
         } else if (metricName.matches("(?i)errors")) {
-            tc.metric = ErrorStatistic.errors();
+            tc.metric = ErrorStatistic.instance();
         } else {
             try {
                 Class<?> clazz = Class.forName(metricName, false, TestCase.class.getClassLoader()); // load class without initialisation
@@ -111,7 +111,7 @@ public class TestCase {
         if (metric == null) {
             return Outcome.skipped(name, description, METRIC_UNDEFINED, "");
         }
-        if (metric.getN() == 0) {
+        if (!metric.isValid()) {
             return Outcome.skipped(name, description, NO_SAMPLES, "");
         }
         double actual = getActual();

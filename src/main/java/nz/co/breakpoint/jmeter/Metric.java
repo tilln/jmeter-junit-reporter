@@ -21,8 +21,12 @@ public interface Metric {
      */
     void increment(double value, boolean success);
 
-    /**
-     * @return total number of samples processed
+    /** Indicate whether the metric calculation yields a valid result,
+     * or otherwise the associated test case can be marked as skipped.
+     * For example if no samples were processed, the mean would be undefined.
+     * @return true if metric returns a valid result
      */
-    long getN();
+    default boolean isValid() {
+        return true;
+    }
 }

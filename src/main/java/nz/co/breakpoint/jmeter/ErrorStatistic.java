@@ -9,7 +9,7 @@ public class ErrorStatistic extends Statistic {
         super(new Mean());
     }
 
-    public static ErrorStatistic errors() {
+    public static ErrorStatistic instance() {
         return new ErrorStatistic();
     }
 

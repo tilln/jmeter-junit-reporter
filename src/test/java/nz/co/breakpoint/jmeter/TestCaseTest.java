@@ -19,6 +19,7 @@ public class TestCaseTest {
     @Test
     public void shouldCalculateHits() {
         instance = TestCase.fromKPI("", "hits", "", "", "");
+        assertEquals(0.0d, instance.getActual(), 0.0d);
         feedWithTimings(instance, timings);
         assertEquals(4.0d, instance.getActual(), 0.0d);
     }

@@ -39,15 +39,6 @@ public class Statistic implements Metric {
         return new Statistic(new Min());
     }
 
-    public static Metric count() {
-        return new Statistic(new Min() {
-            @Override
-            public double getResult() {
-                return getN();
-            }
-        });
-    }
-
     @Override
     public double getResult() { return aggregate.getResult(); }
 
@@ -55,5 +46,5 @@ public class Statistic implements Metric {
     public void increment(double value, boolean success) { aggregate.increment(value); }
 
     @Override
-    public long getN() { return aggregate.getN(); }
+    public boolean isValid() { return aggregate.getN() > 0; }
 }
