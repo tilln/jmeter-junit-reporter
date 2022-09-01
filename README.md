@@ -131,11 +131,11 @@ Under tab "Available Plugins", select "JUnit Reporter", then click "Apply Change
 
 ### Via Package from [JMeter-Plugins.org](https://jmeter-plugins.org/)
 
-Extract the [zip package](https://jmeter-plugins.org/files/packages/tilln-junit-1.0.zip) into JMeter's lib directory, then restart JMeter.
+Extract the [zip package](https://jmeter-plugins.org/files/packages/tilln-junit-1.1.zip) into JMeter's lib directory, then restart JMeter.
 
 ### Via Manual Download
 
-1. Copy the [jmeter-junit-reporter jar file](https://github.com/tilln/jmeter-junit-reporter/releases/download/1.0/jmeter-junit-reporter-1.0.jar) into JMeter's lib/ext directory.
+1. Copy the [jmeter-junit-reporter jar file](https://github.com/tilln/jmeter-junit-reporter/releases/download/1.1/jmeter-junit-reporter-1.1.jar) into JMeter's lib/ext directory.
 2. Restart JMeter.
 
 
