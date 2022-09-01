@@ -1,6 +1,5 @@
 package nz.co.breakpoint.jmeter;
 
-import org.apache.jmeter.services.FileServer;
 import org.apache.xml.serializer.OutputPropertiesFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

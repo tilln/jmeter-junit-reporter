@@ -65,7 +65,7 @@ public class TestCaseTest {
         long[] timings = new long[1000];
         Arrays.setAll(timings, i -> (long)i);
         feedWithTimings(instance, timings);
-        assertEquals(996.0d, instance.getActual(), 0.0d);
+        assertEquals(999.0d, instance.getActual(), 0.1d);
     }
 
     @Test
