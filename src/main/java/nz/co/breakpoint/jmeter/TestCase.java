@@ -65,7 +65,7 @@ public class TestCase {
         if (metricName == null || metricName.isEmpty()) {
             tc.metric = null;
         } else if (metricName.matches("[Pp][0-9]+(\\.[0-9]+)?")) {
-            tc.metric = Statistic.percentile(Double.parseDouble(metricName.substring(1)));
+            tc.metric = PercentileStatistic.forQuantile(Double.parseDouble(metricName.substring(1)));
         } else if (metricName.matches("(?i)mean|average|μ")) {
             tc.metric = Statistic.mean();
         } else if (metricName.matches("(?i)sd|σ")) {

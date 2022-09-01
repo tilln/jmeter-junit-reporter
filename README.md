@@ -50,7 +50,7 @@ Those tools have additional installation requirements and may have to process po
 
 This plugin instead processes each sample as it occurs, with little memory or storage requirements.
 Aggregates are calculated based on [Apache Commons Math3](https://commons.apache.org/proper/commons-math/userguide/stat.html)
-statistics with "storageless" implementations. 
+statistics with "storageless" implementations when sample sets are large.
 
 Usage
 -----
@@ -73,7 +73,7 @@ and to compare against a threshold.
   |------|-------|
   | MEAN, AVERAGE, μ | Average response time (arithmetic mean) |
   | SD, σ | Standard Deviation of response times (population/non-bias corrected) |
-  | Pn | n-th percentile response time (e.g. P90) |
+  | Pn | n-th percentile response time (e.g. P90). One of two different algorithms is used for percentile calcuations: A more accurate one for smaller sample sets and an estimate for larger sample sets. |
   | MAX | Maximum response time |
   | MIN | Minimum response time |
   | HITS, SAMPLES | Total number of samples (requests) |
@@ -106,6 +106,20 @@ and "App_" with different thresholds (1000 and 2000 milliseconds, respectively).
 
 The third KPI asserts a minimum of 95% overall throughput by defining a threshold for the total number of samples
 to compare with 95% of the product of requests per seconds and test duration (in seconds).
+
+Configuration
+-------------
+
+### JMeter Properties
+
+The following properties control the plugin behaviour:
+
+- `jmeter.junit.valuesStoreLimit`:
+  How many sample values are stored in memory for calculating percentiles.
+  When this limit is exceeded, an estimate based on the
+  [P-Square Algorithm](https://commons.apache.org/proper/commons-math/javadocs/api-3.6.1/org/apache/commons/math3/stat/descriptive/rank/PSquarePercentile.html)
+  is used instead. Default: 256K values (8 byte `double`) to fit in 2 MB (huge page size).
+  This limit applies for each Percentile KPI, as opposed to an overall limit.
 
 
 Installation

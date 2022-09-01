@@ -19,10 +19,6 @@ public class Statistic implements Metric {
         this.aggregate = aggregate;
     }
 
-    public static Metric percentile(double p) {
-        return new Statistic(new PSquarePercentile(p));
-    }
-
     public static Metric mean() {
         return new Statistic(new Mean());
     }
