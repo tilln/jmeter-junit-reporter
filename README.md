@@ -99,7 +99,7 @@ and to compare against a threshold.
 |----|------|-------------|----------|---------|
 |#1  |P50   |Web_.*       |<=        |1000     |
 |#2  |P50   |App_.*       |<=        |2000     |
-|#3  |HITS  |.*           |>=        |${__jexl3( 0.95 * ${RPS} * ${DURATION} )}|
+|#3  |HITS  |.*           |>=        |`${__jexl3( 0.95 * ${RPS} * ${DURATION} )}`|
 
 The first two KPIs are for the median (50th percentile) response time, for sample names beginning with "Web_"
 and "App_" with different thresholds (1000 and 2000 milliseconds, respectively).
