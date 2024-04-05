@@ -21,7 +21,7 @@ public class TestCase {
     private static final String FAILURE_DETAILS_FORMAT, METRIC_UNDEFINED, NO_SAMPLES, ACTUAL_UNDEFINED, THRESHOLD_UNDEFINED;
     static {
         ResourceBundle rb = ResourceBundle.getBundle(JUnitReporter.class.getName()+"Resources", JMeterUtils.getLocale());
-        FAILURE_DETAILS_FORMAT = getResourceBundleString(rb, "testCase.failureDetailsFormat", "Actual value %1f exceeds threshold %2f for samples matching \"%3s\"");
+        FAILURE_DETAILS_FORMAT = getResourceBundleString(rb, "testCase.failureDetailsFormat", "Actual value %1$f exceeds threshold %2$f for samples matching \"%3$s\"");
         METRIC_UNDEFINED = getResourceBundleString(rb, "testCase.metricUndefined", "Metric undefined");
         NO_SAMPLES = getResourceBundleString(rb, "testCase.noSamples", "No samples to aggregate");
         ACTUAL_UNDEFINED = getResourceBundleString(rb, "testCase.actualUndefined", "Actual metric value undefined");
