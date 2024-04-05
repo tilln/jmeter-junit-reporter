@@ -28,7 +28,6 @@ jobs:
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         prerelease: true
-        automatic_release_tag: ${{ github.ref_name }}
         title: ${{ github.ref_name }}
         files: |
           target/*.jar
