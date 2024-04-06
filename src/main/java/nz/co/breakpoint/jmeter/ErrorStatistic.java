@@ -14,7 +14,7 @@ public class ErrorStatistic extends Statistic {
     }
 
     @Override
-    public void increment(double value, boolean success) {
+    public synchronized void increment(double value, boolean success) {
         aggregate.increment(success ? 0.0 : 1.0);
     }
 }

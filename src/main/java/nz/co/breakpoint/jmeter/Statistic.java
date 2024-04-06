@@ -39,7 +39,7 @@ public class Statistic implements Metric {
     public double getResult() { return aggregate.getResult(); }
 
     @Override
-    public void increment(double value, boolean success) { aggregate.increment(value); }
+    public synchronized void increment(double value, boolean success) { aggregate.increment(value); }
 
     @Override
     public boolean isValid() { return aggregate.getN() > 0; }
