@@ -1,13 +1,14 @@
-name: Github Release
+name: Github Pre-Release
 
 on:
   push:
     tags:
       - '*-SNAPSHOT'
+  workflow_dispatch:
 
 jobs:
   release:
-    name: Release
+    name: Pre-Release
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -28,5 +29,5 @@ jobs:
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         prerelease: true
-        automatic_release_tag: latest
+        automatic_release_tag: snapshot
         files: target/*.jar
