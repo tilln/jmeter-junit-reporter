@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.apache.jmeter.engine.util.NoThreadClone;
 import org.apache.jmeter.samplers.SampleEvent;
 import org.apache.jmeter.samplers.SampleListener;
 import org.apache.jmeter.samplers.SampleResult;
@@ -16,7 +17,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class JUnitReporter extends AbstractTestElement
-        implements Serializable, SampleListener, TestStateListener, TestBean, Visualizer /* so it gets an entry in the Listener menu */ {
+        implements Serializable, SampleListener, TestStateListener, TestBean, NoThreadClone,
+        Visualizer /* so it gets an entry in the Listener menu */ {
 
     private static final long serialVersionUID = 1L;
 
