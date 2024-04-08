@@ -100,7 +100,7 @@ public class TestCase {
         if (metric != null) {
             final String label = result.getSampleLabel();
             if (labelPattern.matcher(label).matches()) {
-                log.trace("\"{}\" including sample \"{}\"", name, label);
+                log.trace("\"{}\" including sample \"{}\" {}ms", name, label, result.getTime());
                 metric.increment(result.getTime(), result.isSuccessful());
             }
         }
